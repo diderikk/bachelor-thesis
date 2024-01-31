@@ -287,11 +287,11 @@ Supabase has not been configured with row level security (RLS). This decision wa
 
 ```
 DEV_PROTOCOL=http # Protocol used when fetching data
-DEV_SERVER_URL=localhost:3000 # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL.
+DEV_SERVER_URL=<DEV_SERVER_URL> # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL.
 DEV_SUPABASE_URL="https://example.supabase.co" # Valid supabase URL
 DEV_SUPABASE_ANON_KEY="example key" # Valid supabase key
 DEV_SUPABASE_USER_TABLE="Users" # User table name
-DEV_BACKEND_URL=localhost:3001 # Iris URL. Cannot be the same as Athena URL
+DEV_BACKEND_URL=<DEV_BACKEND_URL> # Iris URL. Cannot be the same as Athena URL
 # This can be a lot less then the PROD version since no attacks are expected.
 DEV_PBKDF2_ITERATIONS=2048 # The amount of times th pbkdf2 algortihm runs sha512
 DEV_PBKDF2_KEY_SIZE=64 # The key size used in the pbkdf2 algorithm
@@ -302,11 +302,11 @@ IS_DEV=true # Must be exactly "true" for dev mode to be activated. Else prod is 
 
 # IMPORTANT that this is https to ensure encrypted communication
 PROD_PROTOCOL=https # Protocol used when fetching data
-PROD_SERVER_URL=13.70.193.218:3000 # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL
+PROD_SERVER_URL=<PROD_SERVER_URL> # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL
 PROD_SUPABASE_URL="https://example.supabase.co" # Valid supabase URL
 PROD_SUPABASE_ANON_KEY="example key" # Valid supabase key
 PROD_SUPABASE_USER_TABLE="Users" # User table name
-PROD_BACKEND_URL=localhost:3000 # Iris URL. Cannot be the same as Athena URL
+PROD_BACKEND_URL=<PROD_BACKEND_URL> # Iris URL. Cannot be the same as Athena URL
 
 # VERY important to run "openssl speed" and view how many sha512 iterations can be done in 3s for the selected key size and choose the prod iterations thereafter.
 # Aim for it to take enough time to hinder mass trial and error, but also not long enough time to disturb the user.

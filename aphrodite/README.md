@@ -132,12 +132,12 @@ Currently only Android works, as a bug was discovered, that causes `yarn ios` to
 ```
 RESET_APPLICATION_ON_STARTUP=false # Must be exactly "true" for application to reset on startup. Else no reset is done.
 IS_DEV=true # Must be exactly "true" for dev mode to be activated. Else prod is used. Also, decides websocket url in EmbeddedWeb.tsx.
-DEV_BACKEND_URL=10.0.2.2:3000 # Iris URL. 10.0.2.2 is the mobile version of localhost.
+DEV_BACKEND_URL=<DEV_IRIS_URL> # Iris URL. <DEV_IRIS_URL> is the mobile version of localhost.
 DEV_PBKDF2_ITERATIONS=2048 # The amount of times the pbkdf2 algortihm runs sha512
 DEV_PBKDF2_KEY_SIZE=64 # The key size used in the pbkdf2 algorithm
 
 
-PROD_BACKEND_URL=13.70.193.218:3000 # Iris URL
+PROD_BACKEND_URL=<PROD_IRIS_URL> # Iris URL
 # VERY important to run "openssl speed" (keep in mind it has to be run on a mobile device, sine this is a mobile app) and view how many sha512 iterations can be done in 3s for the selected key size and choose the prod iterations thereafter.
 # Aim for it to take enough time to hinder mass trial and error, but also not long enough time to disturb the user.
 # E.g., 0.5s which would mean dividing the iterations by 3s/0.5s = 6.
