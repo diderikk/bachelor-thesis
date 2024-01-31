@@ -210,7 +210,7 @@ solana config get keypair
 DATABASE_URL="postgres://example:5432/example" # Valid Postgres Database URL
 KEY_PAIR_PATH="/PATH/TO/SOLANA/WALLET/KEYPAIR" # Path received from "solana config get keypair"
 REDIS_URL="redis://example" # Valid Redis Database URL
-JWT_SECRET="VGhpcyBpcyBhbiBlYXN0ZXIgZWdnIGhhaGFoYWg=" # Random String
+JWT_SECRET="..." # Securely generate long random string
 ADMIN_USERNAME="admin"
 ADMIN_PASSWORD="test"
 ANCHOR_ADDRESS="https://api.testnet.solana.com"

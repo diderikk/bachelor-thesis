@@ -288,7 +288,7 @@ Supabase has not been configured with row level security (RLS). This decision wa
 ```
 DEV_PROTOCOL=http # Protocol used when fetching data
 DEV_SERVER_URL=<DEV_SERVER_URL> # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL.
-DEV_SUPABASE_URL="https://example.supabase.co" # Valid supabase URL
+DEV_SUPABASE_URL="https://example.supabase.com" # Valid supabase URL
 DEV_SUPABASE_ANON_KEY="example key" # Valid supabase key
 DEV_SUPABASE_USER_TABLE="Users" # User table name
 DEV_BACKEND_URL=<DEV_BACKEND_URL> # Iris URL. Cannot be the same as Athena URL
@@ -303,7 +303,7 @@ IS_DEV=true # Must be exactly "true" for dev mode to be activated. Else prod is 
 # IMPORTANT that this is https to ensure encrypted communication
 PROD_PROTOCOL=https # Protocol used when fetching data
 PROD_SERVER_URL=<PROD_SERVER_URL> # Athena URL. Make sure that the server starts on this domain and port. Cannot be the same as Iris URL
-PROD_SUPABASE_URL="https://example.supabase.co" # Valid supabase URL
+PROD_SUPABASE_URL="https://example.supabase.com" # Valid supabase URL
 PROD_SUPABASE_ANON_KEY="example key" # Valid supabase key
 PROD_SUPABASE_USER_TABLE="Users" # User table name
 PROD_BACKEND_URL=<PROD_BACKEND_URL> # Iris URL. Cannot be the same as Athena URL
