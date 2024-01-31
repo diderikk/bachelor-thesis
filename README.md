@@ -1,7 +1,8 @@
 # Decentralized Identity - a mobile wallet and verification platform
 
 **Thesis**: [https://hdl.handle.net/11250/3004162](https://hdl.handle.net/11250/3004162)
-Made by:
+
+**Made by**:
 
 - [RokasBliu](https://github.com/RokasBliu)
 - [hamasl](https://github.com/hamasl)
