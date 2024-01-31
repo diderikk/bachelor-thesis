@@ -1,0 +1,20 @@
+.link {
+  color: black;
+  padding: 7px;
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 10px;
+  text-align: right;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.linkActive {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.heading {
+  font-size: 30px;
+  margin-left: 5px;
+}

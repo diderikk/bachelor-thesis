@@ -1,0 +1,48 @@
+stages:
+  - install
+  - test
+  - deploy
+
+image: node:14.19.1
+
+# Only runs pipelines if merge request has been created or is open for that branch
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: $CI_MERGE_REQUEST
+    - when: never
+
+install:
+  stage: install
+  script:
+    - yarn install
+  artifacts:
+    paths:
+      - ./node_modules
+
+unit_test:
+  stage: test
+  variables:
+    DATABASE_URL: "postgres://test"
+    KEY_PAIR_PATH: "keypair.json"
+    REDIS_URL: "redis://:test@localhost"
+    JWT_SECRET: "test_secret"
+    ADMIN_USERNAME: "admin"
+    ADMIN_PASSWORD: "test"
+  script:
+    - echo "$KEYPAIR" > keypair.json
+    - yarn test
+
+deploy:
+  stage: deploy
+  script:
+    - mkdir ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - touch ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - apt-get update -y
+    - apt-get -y install rsync
+    - rsync -av --delete --exclude '.env' --exclude 'next-env.d.ts' --exclude 'yarn.lock' --exclude 'node_modules' --exclude '.next' ./* app@13.70.193.218:~/iris
+    - ssh app@13.70.193.218 yarn --cwd iris/ install
+    - ssh app@13.70.193.218 systemctl --user restart app
